@@ -16,9 +16,9 @@
  */
 package org.jboss.shrinkwrap.impl.base.test.handler;
 
-import org.jboss.shrinkwrap.api.ArchivePath;
 import org.jboss.shrinkwrap.api.ArchiveEvent;
 import org.jboss.shrinkwrap.api.ArchiveEventHandler;
+import org.jboss.shrinkwrap.api.ArchivePath;
 import org.jboss.shrinkwrap.api.asset.Asset;
 import org.jboss.shrinkwrap.api.asset.StringAsset;
 

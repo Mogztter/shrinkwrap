@@ -21,14 +21,11 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.util.Random;
 import java.util.logging.Logger;
 
 import junit.framework.TestCase;
 
 import org.jboss.shrinkwrap.api.ShrinkWrap;
-import org.jboss.shrinkwrap.api.asset.Asset;
-import org.jboss.shrinkwrap.api.asset.ByteArrayAsset;
 import org.jboss.shrinkwrap.api.exporter.ZipExporter;
 import org.jboss.shrinkwrap.api.spec.JavaArchive;
 import org.jboss.shrinkwrap.impl.base.io.IOUtil;
@@ -136,33 +133,6 @@ public class ZipExporterStressTest {
      */
     private static long totalFreeMemory(final Runtime runtime) {
         return runtime.maxMemory() - runtime.totalMemory() + runtime.freeMemory();
-    }
-
-    /**
-     * An {@link Asset} which contains a megabyte of dummy data
-     *
-     * @author <a href="mailto:andrew.rubinger@jboss.org">ALR</a>
-     */
-    private static class MegaByteAsset extends ByteArrayAsset implements Asset {
-        /**
-         * Dummy megabyte
-         */
-        private static int MEGA = 1024 * 1024;
-
-        private static final Random random = new Random();
-
-        private MegaByteAsset(final byte[] content) {
-            super(content);
-        }
-
-        static MegaByteAsset newInstance() {
-            /**
-             * Bytes must be random/distributed so that compressing these in ZIP isn't too efficient
-             */
-            final byte[] content = new byte[MEGA];
-            random.nextBytes(content);
-            return new MegaByteAsset(content);
-        }
     }
 
     /**

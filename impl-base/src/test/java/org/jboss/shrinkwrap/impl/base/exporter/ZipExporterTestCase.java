@@ -117,7 +117,7 @@ public final class ZipExporterTestCase extends StreamExporterTestBase<ZipImporte
         return new ByteArrayInputStream(actualContents);
     }
 
-/**
+   /**
     * {@inheritDoc
     * @see org.jboss.shrinkwrap.impl.base.exporter.ExportTestBase#getArchiveExtension()
     */

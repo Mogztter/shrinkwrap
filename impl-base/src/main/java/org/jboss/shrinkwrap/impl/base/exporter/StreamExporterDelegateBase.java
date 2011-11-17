@@ -293,5 +293,4 @@ public abstract class StreamExporterDelegateBase<O extends OutputStream> extends
     protected final Set<ArchivePath> getExportedPaths() {
         return Collections.unmodifiableSet(this.pathsExported);
     }
-
 }

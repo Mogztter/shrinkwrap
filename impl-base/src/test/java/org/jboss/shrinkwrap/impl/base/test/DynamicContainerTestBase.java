@@ -1538,7 +1538,7 @@ public abstract class DynamicContainerTestBase<T extends Archive<T>> extends Arc
         // Fail us
         TestCase.fail("Expected " + IllegalOverwriteException.class.getName() + " not received");
     }
-     
+
     /**`
      * Reproduces a bug within Archive.contains, discovered in SHRINKWRAP-348
      */
